@@ -110,14 +110,16 @@ module Ethon
 
       def encode_hash_pairs(h, prefix, pairs)
         h.each_pair do |k,v|
-          key = prefix.nil? ? k : "#{prefix}[#{k}]"
+          #key = prefix.nil? ? k : "#{prefix}[#{k}]"
+          key = prefix.nil? ? k : "#{prefix}"
           pairs_for(v, key, pairs)
         end
       end
 
       def encode_indexed_array_pairs(h, prefix, pairs)
         h.each_with_index do |v, i|
-          key = "#{prefix}[#{i}]"
+          #key = "#{prefix}[#{i}]"
+          key = "#{prefix}"
           pairs_for(v, key, pairs)
         end
       end
